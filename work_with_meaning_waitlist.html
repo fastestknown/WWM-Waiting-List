@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work With Meaning - Join the Waiting List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #FAF8F5;
+            color: #1E2D3D;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+        
+        /* Header */
+        .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 32px;
+            font-weight: 400;
+            color: #1E2D3D;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+        
+        .tagline {
+            font-size: 16px;
+            color: #75B8A2;
+            font-weight: 500;
+            margin-bottom: 48px;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-bottom: 56px;
+        }
+        
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 48px;
+            line-height: 1.15;
+            color: #1E2D3D;
+            margin-bottom: 24px;
+            font-weight: 400;
+            letter-spacing: -1px;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #1E2D3D;
+            margin-bottom: 32px;
+            font-weight: 400;
+            opacity: 0.85;
+        }
+        
+        /* Content */
+        .content {
+            margin-bottom: 56px;
+        }
+        
+        .content p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            color: #1E2D3D;
+            opacity: 0.9;
+        }
+        
+        .highlight {
+            background-color: #E7DCC9;
+            padding: 32px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .highlight h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 28px;
+            color: #1E2D3D;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+        
+        .highlight p {
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        
+        .highlight p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        
+        .value-item {
+            background-color: #FAF8F5;
+            padding: 24px;
+            border-left: 3px solid #75B8A2;
+            border-radius: 4px;
+        }
+        
+        .value-item h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1E2D3D;
+            margin-bottom: 8px;
+        }
+        
+        .value-item p {
+            font-size: 14px;
+            line-height: 1.5;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+        
+        /* Form Section */
+        .form-section {
+            background-color: #1E2D3D;
+            padding: 48px;
+            border-radius: 12px;
+            margin-bottom: 48px;
+        }
+        
+        .form-section h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 32px;
+            color: #FAF8F5;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+        
+        .form-section p {
+            color: #E7DCC9;
+            font-size: 17px;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        
+        .form-embed {
+            width: 100%;
+        }
+        
+        .waitlist-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #E7DCC9;
+            margin-bottom: 8px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            color: #1E2D3D;
+            background-color: #FAF8F5;
+            border: 2px solid #E7DCC9;
+            border-radius: 6px;
+            transition: border-color 0.2s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #75B8A2;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            color: #FAF8F5;
+            background-color: #F25F5C;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #d54946;
+            transform: translateY(-1px);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .form-placeholder {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .form-placeholder p {
+            color: #1E2D3D;
+            font-size: 16px;
+            margin-bottom: 24px;
+            opacity: 0.7;
+        }
+        
+        .form-placeholder code {
+            background-color: #E7DCC9;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #1E2D3D;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 48px;
+            border-top: 1px solid #E7DCC9;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: #1E2D3D;
+            opacity: 0.6;
+            margin-bottom: 16px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            font-size: 14px;
+            color: #75B8A2;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+        
+        /* Accent Elements */
+        .accent-line {
+            width: 60px;
+            height: 3px;
+            background-color: #F25F5C;
+            margin: 32px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            .subtitle {
+                font-size: 18px;
+            }
+            
+            .form-section {
+                padding: 32px 24px;
+            }
+            
+            .form-section h2 {
+                font-size: 28px;
+            }
+            
+            .values {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="logo">Work With Meaning</div>
+        <div class="tagline">Trust-Centered Leadership Ecosystem</div>
+        
+        <!-- Hero -->
+        <div class="hero">
+            <h1>Built on trust. Powered by relationships. Made for you.</h1>
+            <div class="accent-line"></div>
+            <p class="subtitle">A new kind of ecosystem for fractional leaders who want to connect with the right people—and businesses who want to work with leaders who actually care.</p>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <p>Most fractional leaders are isolated. Most businesses can't find people they trust. Most platforms treat relationships like transactions.</p>
+            
+            <p>We're building something different.</p>
+        </div>
+        
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>Something's Coming</h2>
+            <p>We're launching soon. Be the first to know.</p>
+            
+            <div class="form-embed">
+                <!-- Native Form -->
+                <form action="https://formspree.io/f/xvgdowqq" method="POST" class="waitlist-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role">I am a...</label>
+                        <select id="role" name="role" required>
+                            <option value="">Select one</option>
+                            <option value="fractional-leader">Fractional Leader</option>
+                            <option value="business-owner">Business Owner</option>
+                            <option value="both">Both</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">What brings you here? (optional)</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Join the Waiting List</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>Building the future of fractional leadership, one trusted relationship at a time.</p>
+            <div class="footer-links">
+                <a href="/cdn-cgi/l/email-protection#b8ded7cadcf8cfd7cad3cfd1ccd0d5ddd9d6d1d6df96dbd7d5">Contact</a>
+                <a href="https://linkedin.com/in/fordknowlton" target="_blank">LinkedIn</a>
+                <a href="#">About</a>
+            </div>
+            <p style="margin-top: 24px;">© 2025 Work With Meaning. Cincinnati, Ohio.</p>
+        </div>
+    </div>
+</body>
+</html>
