@@ -331,7 +331,7 @@
         <div class="hero">
             <h1>Built on trust. Powered by relationships. Made for you.</h1>
             <div class="accent-line"></div>
-            <p class="subtitle">A new kind of ecosystem for fractional leaders who want to connect with the right people—and businesses who want to work with leaders who actually care.</p>
+            <p class="subtitle">A new kind of ecosystem for fractional leaders who want to connect with the right people, and businesses who want to work with leaders who actually care.</p>
         </div>
         
         <!-- Content -->
@@ -347,9 +347,54 @@
             <p>We're launching soon. Be the first to know.</p>
             
             <div class="form-embed">
-                <!-- Beehiiv Form -->
-                <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
-                <iframe src="https://subscribe-forms.beehiiv.com/2778f1be-90a4-45a7-be47-4627d3a53e79" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 100%; height: 625px; margin: 0; border-radius: 0px; background-color: transparent; box-shadow: none; max-width: 100%;"></iframe>
+                <form class="waitlist-form" id="waitlist-form">
+                    <div class="form-group">
+                        <label for="name">Your name</label>
+                        <input type="text" id="name" name="name" placeholder="First Last" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submit-btn">Join the Waiting List</button>
+                    <p id="form-message" style="margin-top: 16px; text-align: center; font-size: 15px; color: #75B8A2; display: none;"></p>
+                </form>
+                <script>
+                    document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        const btn = document.getElementById('submit-btn');
+                        const msg = document.getElementById('form-message');
+                        btn.disabled = true;
+                        btn.textContent = 'Joining...';
+                        try {
+                            const res = await fetch('/api/subscribe', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    name: document.getElementById('name').value,
+                                    email: document.getElementById('email').value,
+                                }),
+                            });
+                            if (res.ok) {
+                                document.getElementById('waitlist-form').style.display = 'none';
+                                msg.textContent = "You're on the list. We'll be in touch.";
+                                msg.style.display = 'block';
+                            } else {
+                                btn.disabled = false;
+                                btn.textContent = 'Join the Waiting List';
+                                msg.textContent = 'Something went wrong. Try again.';
+                                msg.style.color = '#F25F5C';
+                                msg.style.display = 'block';
+                            }
+                        } catch {
+                            btn.disabled = false;
+                            btn.textContent = 'Join the Waiting List';
+                            msg.textContent = 'Something went wrong. Try again.';
+                            msg.style.color = '#F25F5C';
+                            msg.style.display = 'block';
+                        }
+                    });
+                </script>
             </div>
         </div>
         
